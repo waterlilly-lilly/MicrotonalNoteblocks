@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "N N",
+    "NNN",
+    " B "
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:iron_nugget"
+    },
+    "B": {
+      "item": "minecraft:note_block"
+    }
+  },
+  "result": {
+    "item": "microtonalnoteblocks:tuning_fork",
+    "count": 1
+  }
+}
+
