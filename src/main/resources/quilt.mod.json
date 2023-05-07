@@ -18,12 +18,7 @@
 			"icon": "assets/microtonalnoteblocks/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
-		"entrypoints": {
-			"init": {
-				"adapter": "kotlin",
-				"value": "online.maestoso.microtonalnoteblocks.MicrotonalNoteblocks"
-			}
-		},
+		"entrypoints": {},
 		"depends": [
 			{
 				"id": "quilt_loader",
@@ -32,10 +27,6 @@
 			{
 				"id": "quilted_fabric_api",
 				"versions": ">=6.0.0-"
-			},
-			{
-				"id": "qkl",
-				"versions": ">=2.0.2-"
 			},
 			{
 				"id": "minecraft",
