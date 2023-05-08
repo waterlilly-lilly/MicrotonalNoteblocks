@@ -1,19 +1,18 @@
 [versions]
-
 minecraft = "1.19.4"
 qfapi = "6.0.0-beta.6+0.79.0-1.19.4"
 loader = "0.18.10"
 mappings = "1.19.4+build.10"
 loom = "1.+"
+statement = "4.2.5"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
 qfapi = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api", version.ref = "qfapi" }
 qfapi_deprecated = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api-deprecated", version.ref = "qfapi" }
-
-
 quilt_loader = { module = "org.quiltmc:quilt-loader", version.ref = "loader" }
 quilt_mappings = { module = "org.quiltmc:quilt-mappings", version.ref = "mappings" }
+statement = { module = "com.github.Virtuoel:Statement", version.ref = "statement"}
 
 [bundles]
 quilted_fabric_api = ["qfapi", "qfapi_deprecated"]
