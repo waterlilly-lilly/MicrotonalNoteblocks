@@ -31,11 +31,11 @@ public class NoteBlockMixin extends Block {
 	@Shadow
 	@Final
 	public static IntProperty NOTE;
-	@Inject(method = "appendProperties", at = @At("TAIL"))
+	/*@Inject(method = "appendProperties", at = @At("TAIL"))
 	public void microtonalnoteblocks$injectAddProperties(StateManager.Builder<Block, BlockState> builder, CallbackInfo ci) {
 		builder.add(SCALE);
 		builder.add(OCTAVE);
-	}
+	}*/
 	public NoteBlockMixin(Settings settings) {
 		super(settings);
 	}
@@ -47,14 +47,15 @@ public class NoteBlockMixin extends Block {
 	}
 	@ModifyVariable(method = "onUse", at = @At("STORE"), argsOnly = true)
 	private BlockState microtonalnoteblocks$resetTuneAtMax(BlockState state) {
-		if(state.get(SCALE) > 12 && state.get(NOTE) == 23) {
-			state = state.with(OCTAVE, 1);
-		}
-		if(state.get(NOTE) == state.get(SCALE) * 2 + 1) {
+		if(state.get(NOTE) == 0 && state.get(OCTAVE) == 1) {
 			state = state
 					.with(NOTE, 0)
 					.with(OCTAVE, 0);
 		}
+		if(state.get(SCALE) > 12 && state.get(NOTE) == 24 && state.get(OCTAVE) == 0) {
+			state = state.with(OCTAVE, 1).with(NOTE, 0);
+		}
+
 		return state;
 	}
 	@Inject(method = "onUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;cycle(Lnet/minecraft/state/property/Property;)Ljava/lang/Object;"), cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
